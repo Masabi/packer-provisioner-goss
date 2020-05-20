@@ -12,6 +12,6 @@ RUN go get \
 FROM hashicorp/packer:light
 COPY --from=0 /app/packer-provisioner-goss /bin/packer-provisioner-goss
 
-RUN apk add python \
-&& apk add py-pip \
+RUN apk add python py-pip jq \
 && python -m pip install awscli
+
